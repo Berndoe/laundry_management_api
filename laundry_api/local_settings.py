@@ -1,0 +1,37 @@
+from .settings import *
+
+# Deployment measures
+Debug = True
+
+SECURE_SSL_REDIRECT = False
+# HTTPS SETTINGS
+SECURE_HSTS_SECONDS = 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_HSTS_PRELOAD = False
+
+# Cookie security
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
+# Other settings
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+CSRF_COOKIE_HTTPONLY = False
+CSRF_USE_SESSIONS = True
+CSRF_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
+SESSION_COOKIE_AGE = 25200  # 7 hours
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+CSP_INCLUDE_NONCE_IN = None
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
+
+ALLOWED_HOST = []
+
+STATIC_URL = '/static/'  # Ensure the trailing slash is included
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Where you store your local static files
+STATIC_ROOT = BASE_DIR / "staticfiles"
