@@ -50,7 +50,6 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory with contents similar to:
 
 ```
-DEBUG=True
 SECRET_KEY=your-secret-key
 DATABASE_URL=postgres://user:password@localhost:5432/laundrydb
 ```
@@ -103,20 +102,21 @@ Authorization: Bearer <your_token>
 ## 📖 API Endpoints Overview
 
 | Method | Endpoint                        | Description                          |
-|--------|----------------------------------|--------------------------------------|
-| GET    | /api/companies/                 | List companies (admin only)         |
+|--------|---------------------------------|--------------------------------------|
+| GET    | /api/companies/                 | List companies (admin only)          |
 | POST   | /api/companies/                 | Create a new company                 |
 | GET    | /api/company/customers          | List all customers for a company     |
 | POST   | /api/company/customers/         | Add a new customer                   |
-| GET    | /api/employees/                 | List all employees for a company     |
-| POST   | /api/employees/                 | Add a new employee                   |
-| GET    | /api/services/                  | List available laundry services      |
-| POST   | /api/orders/                    | Create a new laundry order           |
-| GET    | /api/invoices/                  | View generated invoices              |
-| POST   | /api/payments/                  | Record payment against invoice       |
+| GET    | /api/company/employees/         | List all employees for a company     |
+| POST   | /api/company/employees/         | Add a new employee                   |
+| GET    | /api/company/services/          | List available laundry services      |
+| POST   | /api/company/orders/            | Create a new laundry order           |
+| GET    | /api/company/invoices/          | View generated invoices              |
+| POST   | /api/company/payments/          | Record payment against invoice       |
 
 > ✅ API is fully RESTful and uses standard HTTP response codes.
 
+> Api Documentation can be found here: https://documenter.getpostman.com/view/41633017/2sB2cYeLjm 
 ---
 
 ## 🧾 Data Models
@@ -129,8 +129,7 @@ Authorization: Bearer <your_token>
 - **OrderItems** – Contains one or more service items
 - **Invoice** – Auto-generated from completed orders
 - **Payment** – Linked to invoice
-- **User** – Optional: Separate from employee (if needed)
-
+  
 ---
 
 ## ✅ Example Use Case
